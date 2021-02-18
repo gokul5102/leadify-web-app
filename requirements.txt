@@ -4,5 +4,9 @@ Django==3.1.5
 django-crispy-forms==1.11.0
 django-environ==0.4.5
 djangorestframework==3.12.2
+mysqlclient==2.0.3
+psycopg2-binary==2.8.6
 pytz==2020.5
 sqlparse==0.4.1
+waitress==1.4.4
+whitenoise==5.2.0

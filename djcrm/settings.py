@@ -35,7 +35,7 @@ SECRET_KEY = env("SECRET_KEY")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["leadify5102.herokuapp.com/","localhost"]
 
 
 # Application definition
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'djcrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'leadify',
-        'HOST': '127.0.0.1',
-        'PORT': '3307',
-        'USER': 'root',
-        'PASSWORD': 'Vedu@1510',
+        'NAME': env("DB_NAME"),
+        'HOST': env("DB_HOST") ,
+        'PORT': env("DB_PORT"),
+        'USER': env("DB_USER") ,
+        'PASSWORD':env("DB_PASSWORD") ,
     }
 }
 # Password validation
@@ -140,7 +140,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     BASE_DIR / "static"
 ]
-STATIC_ROOT="static_root"
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL='leads.User' #customised user model in models of leads app
